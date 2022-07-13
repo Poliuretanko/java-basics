@@ -17,6 +17,6 @@ public class Step1HelloWorld {
      */
     public static void main(String[] args) {
         // This command writes a message to the console
-        System.out.println("Hello World!");
+        System.out.println("Good bye World!");
     }
 }

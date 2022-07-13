@@ -18,7 +18,7 @@ public class Step3IfElse {
     private static final String nightGreetingPrefix = "Good night ";
 
     public static void main(String[] args) {
-        var hourOfDay = 0;
+        var hourOfDay = 16;
 
         if (args.length > 0) {
             hourOfDay = Integer.parseInt(args[0]);
