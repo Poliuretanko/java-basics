@@ -17,11 +17,18 @@ public class Wear {
         this.tShirt = tShirt;
     }
 
-    boolean shouldBeCleaned(){
-        return wearTime <= jeans.MAX_TIMES_OF_WEARING || wearTime <= tShirt.MAX_TIMES_OF_WEARING  ;
+    boolean tShirtShouldBeCleaned(){
+        return wearTime <= tShirt.MAX_TIMES_OF_WEARING;
     }
-    boolean shouldBeUtilized(){
-        return wearLifecycle >= jeans.MAX_TIMES_BEFORE_UTILIZATION || wearLifecycle >= tShirt.MAX_TIMES_BEFORE_UTILIZATION;
+
+    boolean jeansShouldBeCleaned(){
+        return wearTime <= jeans.MAX_TIMES_OF_WEARING;
+    }
+    boolean tShirtShouldBeUtilized(){
+        return wearLifecycle >= tShirt.MAX_TIMES_BEFORE_UTILIZATION;
+    }
+    boolean jeansShouldBeUtilized(){
+        return wearLifecycle >= jeans.MAX_TIMES_BEFORE_UTILIZATION;
     }
 
     void wearIsWeared(boolean wearState){
