@@ -29,7 +29,7 @@ public class OperationUtils {
 
     public static boolean isFalse(int value) {
         System.out.println("Checking int is false");
-        return value == 0;
+        return value <= 0;
     }
 
     public static boolean isFalse(char value) {

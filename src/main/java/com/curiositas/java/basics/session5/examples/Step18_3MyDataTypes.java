@@ -1,7 +1,7 @@
-package com.curiositas.java.basics.session4.examples;
+package com.curiositas.java.basics.session5.examples;
 
-import com.curiositas.java.basics.session4.examples.datatypes.ImmutablePerson;
-import com.curiositas.java.basics.session4.examples.datatypes.MutablePerson;
+import com.curiositas.java.basics.session5.examples.datatypes.ImmutablePerson;
+import com.curiositas.java.basics.session5.examples.datatypes.MutablePerson;
 
 public class Step18_3MyDataTypes {
     public static void main(String[] args) {

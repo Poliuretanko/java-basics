@@ -12,7 +12,6 @@ public class AnotherPerson {
         }
         if (age > maximalAllowedAge) {
             throw new IllegalArgumentException("Age can't be grater than " + maximalAllowedAge);
-
         }
         this.age = age;
     }

@@ -10,6 +10,7 @@ package com.curiositas.java.basics.session1.examples;
 //    1. starting with // and till the end of the line
 //    2. starting with /* and till */
 //    The line below is containing class declarations. Any thing in Java described with class
+// todo добавить хинт про todo и fixme
 public class Step1HelloWorld {
 
     /**

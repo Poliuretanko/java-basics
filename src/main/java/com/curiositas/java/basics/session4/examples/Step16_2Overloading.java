@@ -26,10 +26,10 @@ public class Step16_2Overloading {
         char isFalseCharValue = '0';
         int isFalseIntValue = 0;
         boolean isFalseBooleanValue = false;
-        OperationUtils.isFalse(isFalseStringValue);
-        OperationUtils.isFalse(isFalseCharValue);
-        OperationUtils.isFalse(isFalseIntValue);
-        OperationUtils.isFalse(isFalseBooleanValue);
+        System.out.println(OperationUtils.isFalse(isFalseStringValue));
+        System.out.println(OperationUtils.isFalse(isFalseCharValue));
+        System.out.println(OperationUtils.isFalse(isFalseIntValue));
+        System.out.println(OperationUtils.isFalse(isFalseBooleanValue));
 
         System.out.println("\nConcatenate chars");
         System.out.println(OperationUtils.concatenate('a', 'b'));

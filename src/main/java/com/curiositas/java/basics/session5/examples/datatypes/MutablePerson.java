@@ -1,4 +1,4 @@
-package com.curiositas.java.basics.session4.examples.datatypes;
+package com.curiositas.java.basics.session5.examples.datatypes;
 
 public class MutablePerson {
     private String name;

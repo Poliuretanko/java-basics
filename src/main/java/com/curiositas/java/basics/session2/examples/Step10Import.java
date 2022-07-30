@@ -4,6 +4,7 @@ package com.curiositas.java.basics.session2.examples;
 import com.curiositas.java.basics.session2.examples.imports.Date;
 
 public class Step10Import {
+    //todo добавить импорт статик методов и статик переменных (enum например)
     public static void main(String[] args) {
 
         var date = new Date();

@@ -26,7 +26,7 @@ public class Step16_1Overriding {
         List<SocialRole> socialRoles = Arrays.asList(parent, worker, outsider);
         showSocialRolesNamesAndActing(socialRoles);
     }
-
+    //todo Подобрать показательный пример, зачем надо работать с интерфейсами, а не с конкретными реализациями
     private static void showHowActorsAct(List<Actor> actors) {
         // An actor can only act(). This method is isolated from the details of implementation these actors
         System.out.println("\nShow acting actors");
