@@ -1,4 +1,4 @@
-package com.curiositas.java.basics.session2.homework1.Sano.Practic;
+package com.curiositas.java.basics.session3.examples.homework.sano.Practic;
 
 public interface Parts {
 
