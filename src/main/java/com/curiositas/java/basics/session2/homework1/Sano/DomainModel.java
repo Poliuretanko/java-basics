@@ -10,7 +10,7 @@ public class DomainModel {
         var instruments = new ArrayList<Instrument>();
 
         var drums = new Drums();
-        /*instruments.add(drums);*/
+
 
     }
 }

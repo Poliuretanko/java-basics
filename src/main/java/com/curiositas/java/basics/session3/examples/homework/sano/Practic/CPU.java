@@ -2,8 +2,7 @@ package com.curiositas.java.basics.session3.examples.homework.sano.Practic;
 
 public class CPU implements Parts {
 
-    final int MAX_TIMES_OF_WORKING = 20;
-    final int MAX_TIMES_OF_BREAKS = 45;
+
     boolean isPlugged = false;
 
 
