@@ -1,0 +1,18 @@
+Voting application:
+    Has features:
+        A client can set a list of candidates and a list of voters
+        The application counts votes
+        The application allows each voter to vote only once
+        If less than 50% of voters voted, then the voting is unsuccessful
+    Has operations:
+        Vote
+        Show which % of voters voted
+        Show counts of votes for candidates
+        Close the voting
+    Write tests (Voters: John, Tanya, Claudius, Anaximenes; Candidates: Cola, Pepsi):
+        Successful cases:
+            Close the voting
+            John and Tanya vote for Cola, Claudius vote for Pepsi, Close the voting
+        An exception should be thrown:
+            Anaximenes votes for null
+
