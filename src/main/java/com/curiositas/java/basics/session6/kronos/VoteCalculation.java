@@ -5,7 +5,6 @@ import java.util.List;
 
 class VoteCalculation {
 
-
     String voteCalculation(HashMap <String,String> votes, List<String> candidates) {
         HashMap<String,Long> candidatesResults = new HashMap<>();
         for (String candidate:candidates) {

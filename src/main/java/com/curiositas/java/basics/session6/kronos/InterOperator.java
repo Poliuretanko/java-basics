@@ -2,19 +2,20 @@ package com.curiositas.java.basics.session6.kronos;
 
 import java.util.*;
 
-
 class InterOperator {
-    //int NUMBER_OF_VOTERS = 0;
-    private final Scanner sc = new Scanner(System.in);
+    private Input sc;
+
+    public InterOperator(Input sc){
+        this.sc = sc;
+    }
 
     ArrayList<String> setVoteCondition(){
         System.out.println("Lets start new Vote");
         System.out.println("Please enter list of Candidates via comma:");
-        String candidates = sc.nextLine();
+        String candidates = sc.inputCandidates();
         System.out.println("Please enter list of Voters Lastnames via comma:");
-        String voters = sc.nextLine();
+        String voters = sc.inputVoters();
         ArrayList<String> data = new ArrayList<>();
-        //data.add(getNumberOfVoters);
         data.add(candidates);
         data.add(voters);
         return data;
@@ -25,9 +26,9 @@ class InterOperator {
         System.out.println("Lets starting voting");
         for (int i=1; i<=numberOfVoters; i++) {
             System.out.println("Please enter your Lastname:");
-            String voter = sc.nextLine();
+            String voter = sc.inputVoter();
             System.out.println("Please enter your candidate:");
-            String choice = sc.nextLine();
+            String choice = sc.inputChoice();
             votes.put(voter,choice);
             System.out.println("Thank you next");
         }
@@ -42,7 +43,7 @@ class InterOperator {
     public String receiveCommand() {
         System.out.println("Please enter command. Available commands:");
         System.out.println("new vote, close vote, detailed info");
-        String command = sc.nextLine();
+        String command = sc.inputCommand();
         if (command.contains("new")) {
             return "new";
         } else if (command.contains("close")) {
