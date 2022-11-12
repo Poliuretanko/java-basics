@@ -25,7 +25,7 @@ public class Step39_JPA {
 
     @SuppressWarnings("unused")
     @Bean
-    public CommandLineRunner demoLoadAllCitizens(CitizenDao citizenDao, CityDao cityDao) {
+    public CommandLineRunner demo(CitizenDao citizenDao, CityDao cityDao) {
         return (args) -> {
             var citizens = citizenDao.findAll();
 
