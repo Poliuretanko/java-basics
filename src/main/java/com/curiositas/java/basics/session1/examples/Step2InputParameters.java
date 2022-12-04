@@ -2,7 +2,9 @@ package com.curiositas.java.basics.session1.examples;
 
 /**
  * A simple console program just write to console a greetings message with provided program argument
- * Id there is no parameter, then the program writes "Hello World!"
+ * If there is no parameter, then the program writes "Hello World!"
+ * Try to run using console:
+ * jdk-17-path/bin/java -jar out/artifacts/java_basics_step2_jar/java-basics.jar John
  */
 public class Step2InputParameters {
 
