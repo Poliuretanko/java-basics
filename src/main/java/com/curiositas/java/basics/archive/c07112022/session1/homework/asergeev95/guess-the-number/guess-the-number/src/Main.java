@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
+@SuppressWarnings("ALL")
 public class Main {
     private static final int randomNumbersLowerBound = 1;
     private static final int randomNumbersUpperBound = 100;
