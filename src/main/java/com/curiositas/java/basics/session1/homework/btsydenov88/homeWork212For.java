@@ -4,11 +4,51 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class homeWork212For {
+
+
     /**
-     * It just prints a dumbAss message
+     * Compares 2 values and informs the user if the value1 is less or greater than value2.
+     * @param value1
+     * @param value2
+     * @return true - if the values are equal; false - if the values are not equal.
      */
-    public static void printDumbAssMessage() {
-        System.out.println("You dumb ass! You should've chosen an integer number in the range from 1 to 10! Not a word! Not anything else! Just a number between 1 and 10!");
+    public static boolean isInputEqualRandom(int value1, int value2) {
+        if (value1 == value2) {
+            System.out.println("Congratulations! You got it right!");
+            return true;
+        } else if (value1 < value2){
+            System.out.println("Wrong... You guess is less than computer's chosen number. Try again please.");
+            return false;
+        } else {
+            System.out.println("Wrong... You guess is greater than computer's chosen number. Try again please.");
+            return false;
+        }
+    }
+
+    /**
+     * Checks if the dumbAssCounter reached the limit. Corresponding messages are printed.
+     * @param dumbAssCounter
+     * @param dumbAssLimit
+     * @return true - if the dumbAss limit is reached; false - if not reached
+     */
+    public static boolean isDumbAss(int dumbAssCounter, int dumbAssLimit) {
+        if (dumbAssCounter == dumbAssLimit) {
+            System.out.println("You dumb ass! You should've chosen an integer number in the range from 1 to 10! Not a word! Not anything else! Just a number within 1 and 10!");
+            return true;
+        } else {
+            System.out.println("It should be an integer number between 1 and 10. Try again please");
+            return false;
+        }
+
+    }
+
+    /**
+     * Verifies if the input value is within the specified range min - max
+     * @param input
+     * @return true - if the input is within the range; false - if the input is not within the range
+     */
+    public static boolean isInputWithinRange(int min, int max, int input) {
+        return (input >= min && input <= max);
     }
 
     /**
@@ -34,66 +74,50 @@ public class homeWork212For {
     }
 
     public static void main(String[] args) {
+        int minRandomValue = 1;
+        int maxRandomValue = 10;
 
-        // This is just a counter for while loop
-        var counter = 0;
-
-        // This is just a counter for while loop to catch a moment when it's time to print dumbAss message
+        // These are just the counter and the limit for while loop to catch a moment when it's time to print dumbAss message
         var dumbCounter = 0;
+        var dumbAssLimit = 3;
 
         // Invite a user to the game
         System.out.println("Let's play a game! Choose some random number within the range 0-10");
-
-        // initiate Random() method
         Random random = new Random();
 
-        // Let's play the game. The counter is supposed to be incremented when the number is correctly guessed or the dumbAss limit is reached.
-        while (counter < 1) {
+        // The computer's choice is an integer within minRandomValue and maxRandomValue
+        var computerChoice = random.nextInt(maxRandomValue) + minRandomValue;
 
-            // Let the user input something
+        // Let's play the game.
+        while (true) {
             Scanner scanner = new Scanner(System.in);
-
-            // The computer's choice is an integer between 1 and 10
-            var computerChoice = random.nextInt(10) + 1;
 
             // Read the user's choice
             var inputLine=scanner.nextLine();
 
-            // Verify if the input from the user is an integer
-            if (!isInteger(inputLine)) {
-
-                dumbCounter++;
-                if (dumbCounter != 3) {
-                    System.out.println("It should be an integer number between 1 and 10. Try again please");
-                } else {
-                    printDumbAssMessage();
-                    counter++;
-                }
-            } else {
-
-                // convert the input to integer and check if it was guessed right
+            // first verify if the input is an integer
+            if (isInteger(inputLine)) {
                 var convertedInputLine = Integer.parseInt(inputLine);
 
-                // verify if the input is within 1-10
-                if (convertedInputLine < 1 || convertedInputLine > 10) {
+                // verify if the input is within the range
+                if (isInputWithinRange(minRandomValue, maxRandomValue, convertedInputLine)){
+
+                    // final check
+                    if (isInputEqualRandom(convertedInputLine, computerChoice)) {
+                        break;
+                    }
+                } else {
                     dumbCounter++;
-                    if (dumbCounter != 3) {
-                        System.out.println("Sorry but your chosen number is not within 1-10. Choose an integer number within 1-10.");
-                    } else {
-                        printDumbAssMessage();
-                        counter++;
+                    if (isDumbAss(dumbCounter, dumbAssLimit)) {
+                        break;
                     }
                 }
-
-                // verify if the user's guess is right
-                if (convertedInputLine == computerChoice) {
-                    System.out.println("Congratulations! You got it right!");
-                    counter++;
-                } else {
-                    System.out.println("Wrong... Try again please.");
+            } else {
+                dumbCounter++;
+                if (isDumbAss(dumbCounter, dumbAssLimit)) {
+                    break;
                 }
             }
         }
-
     }
 }
