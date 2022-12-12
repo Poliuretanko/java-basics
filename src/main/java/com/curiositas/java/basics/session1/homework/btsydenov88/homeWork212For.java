@@ -27,8 +27,8 @@ public class homeWork212For {
         try {
             intValue = Integer.parseInt(string);
             return true;
-        } catch (NumberFormatException e) {
-            System.out.println("Something went wrong.");
+        } catch (NumberFormatException ignore) {
+            // do nothing
         }
         return false;
     }
