@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 public class homeWork212For {
 
+    // These are just the counter and the limit for while loop to catch a moment when it's time to print dumbAss message
+    private static int dumbCounter = 0;
+    private static final int dumbAssLimit = 3;
+
+    private static final int minRandomValue = 1;
+    private static final int maxRandomValue = 10;
 
     /**
      * Compares 2 values and informs the user if the value1 is less or greater than value2.
@@ -74,35 +80,22 @@ public class homeWork212For {
     }
 
     public static void main(String[] args) {
-
-        // These are just the counter and the limit for while loop to catch a moment when it's time to print dumbAss message
-        var dumbCounter = 0;
-        var dumbAssLimit = 3;
-
-        // Invite a user to the game
         System.out.println("Let's play a game! Choose some random number within the range 0-10");
-        Random random = new Random();
-        int minRandomValue = 1;
-        int maxRandomValue = 10;
 
         // The computer's choice is an integer within minRandomValue and maxRandomValue
+        Random random = new Random();
         var computerChoice = random.nextInt(maxRandomValue) + minRandomValue;
 
         // Let's play the game.
         while (true) {
-            Scanner scanner = new Scanner(System.in);
 
             // Read the user's choice
+            Scanner scanner = new Scanner(System.in);
             var inputLine=scanner.nextLine();
 
-            // first verify if the input is an integer
             if (isInteger(inputLine)) {
                 var convertedInputLine = Integer.parseInt(inputLine);
-
-                // verify if the input is within the range
                 if (isInputWithinRange(minRandomValue, maxRandomValue, convertedInputLine)){
-
-                    // final check
                     if (isInputEqualRandom(convertedInputLine, computerChoice)) {
                         break;
                     }
