@@ -14,9 +14,8 @@ public class homeWork212For {
 
     /**
      * Compares 2 values and informs the user if the value1 is less or greater than value2.
-     * @param value1
-     * @param value2
-     * @return true - if the values are equal; false - if the values are not equal.
+     * @return true - if the values are equal;
+     * false - if the values are not equal.
      */
     public static boolean isInputEqualRandom(int value1, int value2) {
         if (value1 == value2) {
@@ -33,9 +32,8 @@ public class homeWork212For {
 
     /**
      * Checks if the dumbAssCounter reached the limit. Corresponding messages are printed.
-     * @param dumbAssCounter
-     * @param dumbAssLimit
-     * @return true - if the dumbAss limit is reached; false - if not reached
+     * @return true - if the dumbAss limit is reached;
+     * false - if not reached
      */
     public static boolean isDumbAss(int dumbAssCounter, int dumbAssLimit) {
         if (dumbAssCounter == dumbAssLimit) {
@@ -50,8 +48,8 @@ public class homeWork212For {
 
     /**
      * Verifies if the input value is within the specified range min - max
-     * @param input
-     * @return true - if the input is within the range; false - if the input is not within the range
+     * @return true - if the input is within the range;
+     * false - if the input is not within the range
      */
     public static boolean isInputWithinRange(int min, int max, int input) {
         return (input >= min && input <= max);
@@ -59,7 +57,6 @@ public class homeWork212For {
 
     /**
      * Verifies if a string can be converted into an integer.
-     * @param string
      * @return  true - if convertable;
      * false - if not convertable
      */
@@ -84,7 +81,7 @@ public class homeWork212For {
 
         // The computer's choice is an integer within minRandomValue and maxRandomValue
         Random random = new Random();
-        var computerChoice = random.nextInt(maxRandomValue) + minRandomValue;
+        var computerChoice = minRandomValue + random.nextInt(maxRandomValue);
 
         // Let's play the game.
         while (true) {
