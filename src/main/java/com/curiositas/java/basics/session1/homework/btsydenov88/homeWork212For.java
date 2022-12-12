@@ -74,8 +74,6 @@ public class homeWork212For {
     }
 
     public static void main(String[] args) {
-        int minRandomValue = 1;
-        int maxRandomValue = 10;
 
         // These are just the counter and the limit for while loop to catch a moment when it's time to print dumbAss message
         var dumbCounter = 0;
@@ -84,6 +82,8 @@ public class homeWork212For {
         // Invite a user to the game
         System.out.println("Let's play a game! Choose some random number within the range 0-10");
         Random random = new Random();
+        int minRandomValue = 1;
+        int maxRandomValue = 10;
 
         // The computer's choice is an integer within minRandomValue and maxRandomValue
         var computerChoice = random.nextInt(maxRandomValue) + minRandomValue;
