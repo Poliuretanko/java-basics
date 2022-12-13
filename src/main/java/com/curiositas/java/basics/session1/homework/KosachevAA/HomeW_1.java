@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class HomeW_1 {
     public static void main(String[] args) {
 
+        System.out.println("Rules of the game. You can only enter numbers from 1 to 10. To interrupt the game, enter enough.\nLet's play a game!");
+
         final int VictoryGameNumber = (int)(Math.random()*11);
         boolean EndGame = false;
         Scanner scanner = new Scanner(System.in);
