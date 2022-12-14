@@ -3,33 +3,34 @@ package com.curiositas.java.basics.session1.homework.almikele;
 import java.util.Scanner;
 
 /**
- * 1. Read user number
- * 2. Check, if it really a number
- * 3. Assert if equals with number from computer
- * 4. Give user info about right way
+ * It is a number game, that check users number with computers generated number.
+ * You can change high interval value or/and number of users tries. <br/> <br/>
+ * Algorithm:
+ * <ol>
+ * <li>Read user number
+ * <li>Check, if it really a number
+ * <li>Assert if equals with number from computer
+ * <li>Give user info about right way
+ * <ol/>
  */
 public class NumberGame {
-
+    private static final int LOW_INTERVAL = 0;
     public static final String INTEGER_NUMBER_MESSAGE = "Wrong! You should input integer number!";
 
     public static void main(String[] args) {
-        int lowInterval = 0;
-        int highInterval = 10;
-        int randomIntFromComputer = (int) (Math.random() * (highInterval + 1) + lowInterval);
-        int numberOfTries = 5;
+        int[] params = {10, 5};
+
+        fetchParamsFromRunConfig(args, params);
+
+        int highInterval = params[0];
+        int numberOfTries = params[1];
+        int randomIntFromComputer = (int) (Math.random() * (highInterval + 1) + LOW_INTERVAL);
+
         int triesCounter;
+
         Scanner scanner = new Scanner(System.in);
 
-        try {
-            if (args.length == 2) {
-                highInterval = Integer.parseInt(args[0]);
-                numberOfTries = Integer.parseInt(args[1]);
-            }
-        } catch (Exception e) {
-            System.out.println(INTEGER_NUMBER_MESSAGE);
-        }
-
-        if (lowInterval > highInterval) {
+        if (LOW_INTERVAL > highInterval) {
             System.out.println("Wrong! Higher interval should more than lower interval");
         }
 
@@ -38,17 +39,26 @@ public class NumberGame {
                 Try to guess, what number computer have?
                 Choose INT number from %d to %d.
                 You have only %d tries!
-                """, lowInterval, highInterval, numberOfTries);
+                """, LOW_INTERVAL, highInterval, numberOfTries);
 
+        triesCounter = checkUserNumber(randomIntFromComputer, scanner, highInterval, numberOfTries);
+
+        if (triesCounter > numberOfTries) {
+            System.out.println("\nSorry, you loose... Try again next time!");
+        }
+    }
+
+    private static int checkUserNumber(int randomIntFromComputer, Scanner scanner, int highInterval, int numberOfTries) {
+        int triesCounter;
         for (triesCounter = 1; triesCounter <= numberOfTries; triesCounter++) {
             System.out.print("\nYour guess is: ");
             String inputLine = scanner.nextLine();
             try {
                 int usersChoice = Integer.parseInt(inputLine);
 
-                if (usersChoice < lowInterval || usersChoice > highInterval) {
+                if (usersChoice < LOW_INTERVAL || usersChoice > highInterval) {
                     checkUsersWrongNumber(
-                            String.format("You should choose from %s to %s!", lowInterval, highInterval),
+                            String.format("You should choose from %s to %s!", LOW_INTERVAL, highInterval),
                             numberOfTries,
                             triesCounter);
                 } else if (usersChoice < randomIntFromComputer) {
@@ -59,13 +69,21 @@ public class NumberGame {
                     System.out.println("Bingo! You won!\nThank you for game! See ya next time!");
                     break;
                 }
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 checkUsersWrongNumber(INTEGER_NUMBER_MESSAGE, numberOfTries, triesCounter);
             }
         }
+        return triesCounter;
+    }
 
-        if (triesCounter > numberOfTries) {
-            System.out.println("\nSorry, you loose... Try again next time!");
+    private static void fetchParamsFromRunConfig(String[] args, int[] params) {
+        try {
+            if (args.length == 2) {
+                params[0] = Integer.parseInt(args[0]);
+                params[1] = Integer.parseInt(args[1]);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(INTEGER_NUMBER_MESSAGE);
         }
     }
 
