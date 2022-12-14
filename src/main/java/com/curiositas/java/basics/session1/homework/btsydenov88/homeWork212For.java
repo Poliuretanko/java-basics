@@ -6,11 +6,15 @@ import java.util.Scanner;
 public class homeWork212For {
 
     // These are just the counter and the limit for while loop to catch a moment when it's time to print dumbAss message
-    private static int dumbCounter = 0;
-    private static final int dumbAssLimit = 3;
+    public static int dumbCounter = 0;
+    public static final int dumbAssLimit = 3;
 
-    private static final int minRandomValue = 1;
-    private static final int maxRandomValue = 10;
+    public static final int minRandomValue = 1;
+    public static final int maxRandomValue = 10;
+
+    // The computer's choice is an integer within minRandomValue and maxRandomValue
+    public static Random random = new Random();
+    public static final int computerChoice = minRandomValue + random.nextInt(maxRandomValue);
 
     /**
      * Compares 2 values and informs the user if the value1 is less or greater than value2.
@@ -78,10 +82,6 @@ public class homeWork212For {
 
     public static void main(String[] args) {
         System.out.println("Let's play a game! Choose some random number within the range 0-10");
-
-        // The computer's choice is an integer within minRandomValue and maxRandomValue
-        Random random = new Random();
-        var computerChoice = minRandomValue + random.nextInt(maxRandomValue);
 
         // Let's play the game.
         while (true) {
