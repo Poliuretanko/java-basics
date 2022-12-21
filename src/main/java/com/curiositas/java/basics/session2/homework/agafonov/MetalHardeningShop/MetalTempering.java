@@ -1,4 +1,4 @@
-package com.curiositas.java.basics.session2.examples.agafonov.part1.MetalHardeningShop;
+package com.curiositas.java.basics.session2.homework.agafonov.MetalHardeningShop;
 
 public abstract class MetalTempering implements MetalHardingShop{
     public static final int HardeningCycle = 3;

@@ -1,4 +1,4 @@
-package com.curiositas.java.basics.session2.examples.almikele.part1.spice;
+package com.curiositas.java.basics.session2.homework.almikele.spice;
 
 public class Pepper implements Spice {
     @Override

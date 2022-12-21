@@ -1,4 +1,4 @@
-package com.curiositas.java.basics.session2.examples.agafonov.part1.MetalMeltingShop;
+package com.curiositas.java.basics.session2.homework.agafonov.MetalMeltingShop;
 
 public  class MeltingPouring implements MetalMeltingShop{
     @Override

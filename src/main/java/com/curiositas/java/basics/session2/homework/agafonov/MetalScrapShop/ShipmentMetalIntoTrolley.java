@@ -1,4 +1,4 @@
-package com.curiositas.java.basics.session2.examples.agafonov.part1.MetalScrapShop;
+package com.curiositas.java.basics.session2.homework.agafonov.MetalScrapShop;
 
 public class ShipmentMetalIntoTrolley implements MetalScrapShop{
     @Override

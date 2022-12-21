@@ -1,15 +1,15 @@
-package com.curiositas.java.basics.session2.examples.almikele.part1;
+package com.curiositas.java.basics.session2.homework.almikele;
 
-import com.curiositas.java.basics.session2.examples.almikele.part1.egg.ChickenEgg;
-import com.curiositas.java.basics.session2.examples.almikele.part1.spice.Pepper;
-import com.curiositas.java.basics.session2.examples.almikele.part1.spice.Salt;
-import com.curiositas.java.basics.session2.examples.almikele.part1.vegetable.CherryTomato;
-import com.curiositas.java.basics.session2.examples.almikele.part1.vegetable.SweetPepper;
+import com.curiositas.java.basics.session2.homework.almikele.egg.ChickenEgg;
+import com.curiositas.java.basics.session2.homework.almikele.spice.Pepper;
+import com.curiositas.java.basics.session2.homework.almikele.spice.Salt;
+import com.curiositas.java.basics.session2.homework.almikele.vegetable.CherryTomato;
+import com.curiositas.java.basics.session2.homework.almikele.vegetable.SweetPepper;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.curiositas.java.basics.session2.examples.almikele.part1.egg.ChickenEgg.QUANTITY;
+import static com.curiositas.java.basics.session2.homework.almikele.egg.ChickenEgg.QUANTITY;
 
 public class Cook {
     public static void main(String[] args) {

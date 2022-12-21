@@ -1,4 +1,4 @@
-package com.curiositas.java.basics.session2.examples.almikele.part1.vegetable;
+package com.curiositas.java.basics.session2.homework.almikele.vegetable;
 
 public abstract class CherryTomato implements Vegetable {
     public String cut(int tomatoes) {

@@ -1,14 +1,14 @@
-package com.curiositas.java.basics.session2.examples.agafonov.part1;
+package com.curiositas.java.basics.session2.homework.agafonov;
 
-import com.curiositas.java.basics.session2.examples.agafonov.part1.MetalHardeningShop.MetalTempering;
-import com.curiositas.java.basics.session2.examples.agafonov.part1.MetalMeltingShop.MeltingPouring;
-import com.curiositas.java.basics.session2.examples.agafonov.part1.MetalScrapShop.ShipmentMetalIntoTrolley;
+import com.curiositas.java.basics.session2.homework.agafonov.MetalHardeningShop.MetalTempering;
+import com.curiositas.java.basics.session2.homework.agafonov.MetalMeltingShop.MeltingPouring;
+import com.curiositas.java.basics.session2.homework.agafonov.MetalScrapShop.ShipmentMetalIntoTrolley;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.curiositas.java.basics.session2.examples.agafonov.part1.MetalHardeningShop.MetalTempering.HardeningCycle;
+import static com.curiositas.java.basics.session2.homework.agafonov.MetalHardeningShop.MetalTempering.HardeningCycle;
 
 
 public class ManufacturingOfMetalProducts {
