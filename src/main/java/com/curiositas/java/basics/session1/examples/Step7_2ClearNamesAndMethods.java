@@ -16,7 +16,7 @@ public class Step7_2ClearNamesAndMethods {
     private static final int maximalRandomNumberValue = 10;
 
     // Try to understand the code without comments. I think it will be easier than in the previous example
-    private String generateRandomNumber(int maximalRandomNumber) {
+    private String generateRandomNumberAsString(int maximalRandomNumber) {
         int randomNumber = random.nextInt(maximalRandomNumber);
         var randomNumberAsString = String.valueOf(randomNumber);
         return randomNumberAsString;
@@ -26,7 +26,7 @@ public class Step7_2ClearNamesAndMethods {
     private String generateRandomName() {
         var index = random.nextInt(minimalNameIndex, maximalNameIndex);
         var chosenName = getNameByIndex(index);
-        var randomNumber = generateRandomNumber(maximalRandomNumberValue);
+        var randomNumber = generateRandomNumberAsString(maximalRandomNumberValue);
         var randomName = chosenName + randomNumber;
         return randomName;
     }

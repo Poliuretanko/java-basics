@@ -47,7 +47,7 @@ public class Step7_1UnclearNamesAndMethods {
     // Wow, it's a method came from the parent class "Object"!
     @Override // Override means that we change the method implementation here
     public String toString() { // It has significantly more clear name than previous methods toString means convert the current object to a string
-        return "g=" + Arrays.toString(g) + "}"; // Just believe, it works!
+        return "g=" + Arrays.toString(g); // Just believe, it works!
     }
 
     public static void main(String[] args) {
