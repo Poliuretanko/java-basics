@@ -7,7 +7,7 @@ public class HomeW_1 {
 
         System.out.println("Rules of the game. You can only enter numbers from 1 to 10. To interrupt the game, enter enough.\nLet's play a game!");
 
-        final int VictoryGameNumber = (int)(Math.random()*11);
+        final int VictoryGameNumber = 1 + (int) (Math.random() * 10);
         boolean EndGame = false;
         Scanner scanner = new Scanner(System.in);
 
@@ -19,13 +19,10 @@ public class HomeW_1 {
                    EndGame = true;
                } else if (CurrentNumber > VictoryGameNumber && CurrentNumber < 11 && CurrentNumber > 0) {
                    System.out.println("The entered number is greater than the winning number. Try again");
-                   EndGame = false;
                } else if (CurrentNumber < VictoryGameNumber && CurrentNumber < 11 && CurrentNumber > 0) {
                    System.out.println("The entered number is less than the winning number. Try again");
-                   EndGame = false;
                } else {
                    System.out.println("Enter a number from 1 ..10 or end the game by entering enough");
-                   EndGame = false;
                }
 
             } else {
@@ -35,7 +32,6 @@ public class HomeW_1 {
                     EndGame = true;
                 } else if (!CurrentLine.equals("")){
                     System.out.println("Enter a number from 1 ..10 or end the game by entering enough");
-                    EndGame = false;
                 }
             }
         }
