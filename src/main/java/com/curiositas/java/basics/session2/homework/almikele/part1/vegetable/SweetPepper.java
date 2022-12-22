@@ -1,8 +1,8 @@
 package com.curiositas.java.basics.session2.homework.almikele.part1.vegetable;
 
-public class SweetPepper implements Vegetable {
+public class SweetPepper extends VegetableAbstract {
     @Override
-    public String add() {
-        return "add sweet pepper";
+    public String cut() {
+        return "cut sweet pepper gorizontalno";
     }
 }
