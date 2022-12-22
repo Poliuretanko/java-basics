@@ -1,4 +1,4 @@
-package com.curiositas.java.basics.session2.homework.almikele.spice;
+package com.curiositas.java.basics.session2.homework.almikele.part1.spice;
 
 public class Salt implements Spice {
     @Override

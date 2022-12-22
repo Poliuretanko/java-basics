@@ -1,4 +1,4 @@
-package com.curiositas.java.basics.session2.homework.almikele.vegetable;
+package com.curiositas.java.basics.session2.homework.almikele.part1.vegetable;
 
 public class SweetPepper implements Vegetable {
     @Override
