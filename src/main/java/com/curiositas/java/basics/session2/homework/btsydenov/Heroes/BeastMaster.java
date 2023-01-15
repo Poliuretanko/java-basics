@@ -6,6 +6,7 @@ public class BeastMaster extends StrengthHeroes{
 
     final int minDamage = 54;
     final int maxDamage = 58;
+    int healthPoints = 660;
 
     @Override
     public int heroMinDamage() {
@@ -24,7 +25,12 @@ public class BeastMaster extends StrengthHeroes{
 
     @Override
     public  int heroHealthPoints() {
-        return 660;
+        return healthPoints;
+    }
+
+    @Override
+    public void getDamage(int damage) {
+        healthPoints = healthPoints - damage;
     }
 
     @Override
