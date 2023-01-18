@@ -6,6 +6,7 @@ public class Bane extends IntelligenceHeroes{
 
     final int minDamage = 33;
     final int maxDamage = 39;
+    int healthPoints = 640;
 
     @Override
     public int heroMinDamage() {
@@ -24,7 +25,12 @@ public class Bane extends IntelligenceHeroes{
 
     @Override
     public  int heroHealthPoints() {
-        return 640;
+        return healthPoints;
+    }
+
+    @Override
+    public void getDamage(int damage) {
+        healthPoints = healthPoints - damage;
     }
 
     @Override

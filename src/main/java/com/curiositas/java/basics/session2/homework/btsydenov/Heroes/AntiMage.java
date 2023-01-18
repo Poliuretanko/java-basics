@@ -6,6 +6,7 @@ public class AntiMage extends AgilityHeroes{
 
     final int minDamage = 53;
     final int maxDamage = 57;
+    int healthPoints = 620;
 
     @Override
     public int heroMinDamage() {
@@ -24,7 +25,12 @@ public class AntiMage extends AgilityHeroes{
 
     @Override
     public  int heroHealthPoints() {
-        return 620;
+        return healthPoints;
+    }
+
+    @Override
+    public void getDamage(int damage) {
+        healthPoints = healthPoints - damage;
     }
 
     @Override

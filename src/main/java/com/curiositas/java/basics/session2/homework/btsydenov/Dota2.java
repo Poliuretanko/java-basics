@@ -10,6 +10,48 @@ public class Dota2 {
         listDota2Heroes();
         System.out.println("\n");
         listDota2Items();
+        System.out.println("\n");
+        System.out.println("=====================================");
+
+        // Let's fight a bit
+        System.out.println("Bane with Divine Rapier fights against Beastmaster with Desolator.");
+
+        Bane bane = new Bane();
+        BeastMaster beastmaster = new BeastMaster();
+        DivineRapier divineRapier = new DivineRapier();
+        Desolator desolator = new Desolator();
+        var roundCounter=1;
+
+        while (true) {
+            System.out.println("Let the round number " + roundCounter + " begin!");
+
+            //Bane hits first
+            if (isVictimDeadAfterAttack(bane, beastmaster, divineRapier)) {
+                break;
+            }
+
+            //Beastmaster hits second
+            else if (isVictimDeadAfterAttack(beastmaster, bane, desolator)) {
+                break;
+            }
+
+            System.out.println("The round number " + roundCounter + " didn't define the winner. We're moving on to the next round!");
+            System.out.println("---");
+            roundCounter++;
+        }
+    }
+
+    public static boolean isVictimDeadAfterAttack(Dota2Heroes attacker, Dota2Heroes victim, Dota2Items attackersItem) {
+        victim.getDamage(attacker.heroDealDamage() + attackersItem.itemBonusDamage());
+        System.out.println(attacker.heroName() + " deals " + (attacker.heroDealDamage() + attackersItem.itemBonusDamage()) + " damage to " + victim.heroName() + ".");
+        if (victim.heroHealthPoints() < 0) {
+            System.out.println(victim.heroName() + " has no HP left.");
+            System.out.println(attacker.heroName() + " has won this tough battle!");
+            return true;
+        } else {
+            System.out.println(victim.heroName() + " has " + victim.heroHealthPoints() + " HP left.");
+            return false;
+        }
     }
 
     public static void listDota2Heroes() {

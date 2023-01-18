@@ -4,9 +4,13 @@ public interface Dota2Heroes {
     String heroName();
     String heroMainAttribute();
     String heroAttackType();
-    String heroDamageStats();
     int heroMinDamage();
     int heroMaxDamage();
     int heroHealthPoints();
     int heroDealDamage();
+    void getDamage(int damage);
+
+    default String heroDamageStats() {
+        return heroMinDamage() + "-" + heroMaxDamage();
+    }
 }
