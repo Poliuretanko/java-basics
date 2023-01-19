@@ -14,42 +14,59 @@ public class Cook {
     public static final String PREFIX = "- ";
 
     public static void main(String[] args) {
-        System.out.println("Lets cook some yaishnitsa:");
-        for (int i = 1; i <= EGGS_QUANTITY; i++) {
-            ChickenEgg chickenEgg = new ChickenEgg();
-            System.out.println(PREFIX + chickenEgg.brake() + " with code: " + chickenEgg.hashCode());
-            System.out.println(PREFIX + chickenEgg.add() + " with code: " + chickenEgg.hashCode());
-        }
+        System.out.println("Lets cook some yaishnitsa");
+        Yaishnitsa yaishnitsa = new Yaishnitsa();
 
-        for (String spice : addSpices()) {
-            System.out.println(PREFIX + spice);
-        }
-        for (String vegetable : cutAndAddVegetables()) {
-            System.out.println(PREFIX + vegetable);
-        }
-        cutAndAddVegetables();
+        addEggs(yaishnitsa);
+        addSalt(yaishnitsa);
+        addPepper(yaishnitsa);
+        addTomato(yaishnitsa);
+        addSweetPepper(yaishnitsa);
+
         System.out.println("Fry!");
         System.out.println("Bon appetite!");
     }
 
-
-    static List<String> addSpices() {
-        Salt salt = new Salt();
-        Pepper pepper = new Pepper();
-        List<String> spices = new ArrayList<>();
-        spices.add(salt.add());
-        spices.add(pepper.add());
-        return spices;
+    private static void addEggs(Yaishnitsa yaishnitsa) {
+        List<ChickenEgg> eggs = new ArrayList<>();
+        for (int i = 1; i <= EGGS_QUANTITY; i++) {
+            ChickenEgg chickenEgg = new ChickenEgg();
+            if (!chickenEgg.isBroken) {
+                chickenEgg.brake();
+            } else {
+                throw new IllegalStateException("Egg already broken!");
+            }
+            eggs.add(chickenEgg);
+            System.out.println("add an broken egg");
+        }
+        yaishnitsa.setEggs(eggs);
     }
 
-    static List<String> cutAndAddVegetables() {
+    private static void addPepper(Yaishnitsa yaishnitsa) {
+        yaishnitsa.setPepper(new Pepper());
+        System.out.println("add pepper");
+    }
+
+    private static void addSalt(Yaishnitsa yaishnitsa) {
+        yaishnitsa.setSalt(new Salt());
+        System.out.println("add salt");
+    }
+
+    static void addTomato(Yaishnitsa yaishnitsa) {
         Tomato tomato = new Tomato();
+        if (!tomato.isCut) {
+            tomato.cut();
+        }
+        yaishnitsa.setTomato(tomato);
+        System.out.println("add cut tomato");
+    }
+
+    static void addSweetPepper(Yaishnitsa yaishnitsa) {
         SweetPepper sweetPepper = new SweetPepper();
-        List<String> vegetables = new ArrayList<>();
-        vegetables.add(tomato.cut());
-        vegetables.add(tomato.add("tomato"));
-        vegetables.add(sweetPepper.cut());
-        vegetables.add(sweetPepper.add("sweet pepper"));
-        return vegetables;
+        if (!sweetPepper.isCut) {
+            sweetPepper.cut();
+        }
+        yaishnitsa.setSweetPepper(sweetPepper);
+        System.out.println("add cut sweet pepper");
     }
 }
