@@ -4,7 +4,9 @@ public class Tomato implements Vegetable {
     public boolean isCut = false;
 
     @Override
-    public void cut() {
-        isCut = true;
+    public void cut(boolean isCut) {
+        if (!isCut) {
+            this.isCut = true;
+        }
     }
 }

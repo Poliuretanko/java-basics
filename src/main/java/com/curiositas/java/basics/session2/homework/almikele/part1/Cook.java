@@ -11,7 +11,6 @@ import java.util.List;
 
 public class Cook {
     public static final int EGGS_QUANTITY = 3;
-    public static final String PREFIX = "- ";
 
     public static void main(String[] args) {
         System.out.println("Lets cook some yaishnitsa");
@@ -31,11 +30,7 @@ public class Cook {
         List<ChickenEgg> eggs = new ArrayList<>();
         for (int i = 1; i <= EGGS_QUANTITY; i++) {
             ChickenEgg chickenEgg = new ChickenEgg();
-            if (!chickenEgg.isBroken) {
-                chickenEgg.brake();
-            } else {
-                throw new IllegalStateException("Egg already broken!");
-            }
+            chickenEgg.brake(chickenEgg.isBroken);
             eggs.add(chickenEgg);
             System.out.println("add an broken egg");
         }
@@ -54,18 +49,14 @@ public class Cook {
 
     static void addTomato(Yaishnitsa yaishnitsa) {
         Tomato tomato = new Tomato();
-        if (!tomato.isCut) {
-            tomato.cut();
-        }
+        tomato.cut(tomato.isCut);
         yaishnitsa.setTomato(tomato);
         System.out.println("add cut tomato");
     }
 
     static void addSweetPepper(Yaishnitsa yaishnitsa) {
         SweetPepper sweetPepper = new SweetPepper();
-        if (!sweetPepper.isCut) {
-            sweetPepper.cut();
-        }
+        sweetPepper.cut(sweetPepper.isCut);
         yaishnitsa.setSweetPepper(sweetPepper);
         System.out.println("add cut sweet pepper");
     }
