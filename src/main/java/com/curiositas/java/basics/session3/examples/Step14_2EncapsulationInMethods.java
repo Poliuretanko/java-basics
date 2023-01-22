@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class Step14_2EncapsulationInMethods {
     public static void main(String[] args) {
-        writeToConsole("Input your name");
-        var userName = readLineFromConsole();
+        output("Input your name");
+        var userName = readValue();
 
-        writeToConsole("Input the current hour");
-        var currentHourAsString = readLineFromConsole();
+        output("Input the current hour");
+        var currentHourAsString = readValue();
         int currentHour = Integer.parseInt(currentHourAsString);
 
         var greeting = defineGreetingMessage(userName, currentHour);
-        writeToConsole(greeting);
+        output(greeting);
     }
 
     private static String defineGreetingMessage(String userName, int currentHour) {
@@ -29,11 +29,11 @@ public class Step14_2EncapsulationInMethods {
         return greeting;
     }
 
-    private static void writeToConsole(String message) {
+    private static void output(String message) {
         System.out.println(message);
     }
 
-    private static String readLineFromConsole() {
+    private static String readValue() {
         var scanner = new Scanner(System.in);
         return scanner.nextLine();
     }

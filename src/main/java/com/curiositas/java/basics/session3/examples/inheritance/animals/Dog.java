@@ -13,6 +13,7 @@ public class Dog extends CanineFamily {
 
     @Override
     public void joinFlock() {
+        joinedToFlock = true;
         System.out.println(getName() + " and human are the flock");
     }
 }

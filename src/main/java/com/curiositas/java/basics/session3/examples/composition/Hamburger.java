@@ -22,13 +22,4 @@ public class Hamburger {
                 sause.getDescription() + ", " +
                 cutlet.getDescription();
     }
-
-    public String getString() {
-        return "AAA";
-    }
-
-    public static void main(String[] args) {
-        Hamburger hamburger = new Hamburger();
-        System.out.println(hamburger.getString());
-    }
 }

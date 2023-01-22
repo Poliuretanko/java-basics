@@ -1,8 +1,12 @@
 package com.curiositas.java.basics.session2.homework.almikele.part1.vegetable;
 
-public class SweetPepper extends VegetableAbstract {
+public class SweetPepper implements Vegetable {
+    public boolean isCut = false;
+
     @Override
-    public String cut() {
-        return "cut sweet pepper gorizontalno";
+    public void cut(boolean isCut) {
+        if (!isCut) {
+            this.isCut = true;
+        }
     }
 }

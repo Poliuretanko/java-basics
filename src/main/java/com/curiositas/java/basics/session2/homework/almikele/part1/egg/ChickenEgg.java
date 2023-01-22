@@ -1,13 +1,14 @@
 package com.curiositas.java.basics.session2.homework.almikele.part1.egg;
 
 public class ChickenEgg implements Egg {
-    @Override
-    public String brake() {
-        return "get belok + zheltok";
-    }
+    public boolean isBroken = false;
 
     @Override
-    public String add() {
-        return "add belok + zheltok";
+    public void brake(boolean isBroken) {
+        if (!isBroken) {
+            this.isBroken = true;
+        } else {
+            throw new IllegalStateException("egg already broken!");
+        }
     }
 }
