@@ -17,22 +17,29 @@ public class Dota2ItemLifecycle {
         Gold currentGold = new Gold();
         currentGold.setGoldAmount(randomGold);
 
+        // Let's try to buy all components and assemble Sange artifact
         OgreAxe ogreAxe = new OgreAxe();
         BeltOfStrength beltOfStrength = new BeltOfStrength();
-        Sange sange = new Sange(ogreAxe, beltOfStrength);
+        if (BuyService.isEnoughGold(beltOfStrength, currentGold)) {
+            BuyService.buy(beltOfStrength, currentGold);
+            if (BuyService.isEnoughGold(ogreAxe, currentGold)) {
+                BuyService.buy(ogreAxe, currentGold);
 
-        if (ogreAxe.isBuy(currentGold)) {
-            if (beltOfStrength.isBuy(currentGold)) {
-                if (sange.isAssemble(currentGold)) {
-                    BandOfElvenskin bandOfElvenskin = new BandOfElvenskin();
-                    BladeOfAlacrity bladeOfAlacrity = new BladeOfAlacrity();
-                    Yasha yasha = new Yasha(bandOfElvenskin, bladeOfAlacrity);
-                    if (bandOfElvenskin.isBuy(currentGold)) {
-                        if (bladeOfAlacrity.isBuy(currentGold)) {
-                            yasha.isAssemble(currentGold);
-                        }
-                    }
-                }
+                Sange sange = new Sange(ogreAxe, beltOfStrength);
+                BuyService.assemble(sange, currentGold);
+            }
+        }
+
+        // Now Let's try to buy all components and assemble Yasha artifact
+        BandOfElvenskin bandOfElvenskin = new BandOfElvenskin();
+        BladeOfAlacrity bladeOfAlacrity = new BladeOfAlacrity();
+        if (BuyService.isEnoughGold(bandOfElvenskin, currentGold)) {
+            BuyService.buy(bandOfElvenskin, currentGold);
+            if (BuyService.isEnoughGold(bladeOfAlacrity, currentGold)) {
+                BuyService.buy(bladeOfAlacrity, currentGold);
+
+                Yasha yasha = new Yasha(bandOfElvenskin, bladeOfAlacrity);
+                BuyService.assemble(yasha, currentGold);
             }
         }
     }
