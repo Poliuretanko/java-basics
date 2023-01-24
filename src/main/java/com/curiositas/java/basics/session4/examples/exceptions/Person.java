@@ -6,7 +6,6 @@ import java.time.temporal.ChronoUnit;
 public class Person {
     private final String dateOfBirthAsString;
 
-    private int methodWithoutExceptionsCallCounter = 0;
     private int methodWithExceptionsCallCounter = 0;
 
     public Person(String dateOfBirthAsString) {
@@ -14,9 +13,7 @@ public class Person {
     }
 
     public Long getAgeInYearsWithoutProperException() {
-        long ageInternal = getAge();
-        methodWithoutExceptionsCallCounter++;
-        return ageInternal;
+        return getAge();
     }
 
     public Long getAgeInYearsWithProperException() {

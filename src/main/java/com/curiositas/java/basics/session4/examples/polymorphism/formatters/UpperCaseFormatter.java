@@ -7,7 +7,4 @@ public class UpperCaseFormatter implements Formatter {
         return text.toUpperCase();
     }
 
-    public String hello() {
-        return "Hello!";
-    }
 }
