@@ -27,7 +27,7 @@ public class BuyService {
         }
     }
 
-    public static void buy(SingleItem item, Gold gold) {
+    public static void buy(SingleItem item, Gold gold) throws IllegalGoldAmountException {
         if (isEnoughGold(item, gold)) {
             System.out.println(item.getItemName() + " was successfully bought.");
             gold.setGoldAmount(gold.getCurrentAmount() - item.itemCost());
@@ -36,7 +36,7 @@ public class BuyService {
         }
     }
 
-    public static void assemble(UpgradedItem item, Gold gold) {
+    public static void assemble(UpgradedItem item, Gold gold) throws IllegalGoldAmountException {
         if (isEnoughGold(item, gold)) {
             System.out.println("Well done! Now you have " + item.getItemName() + "! Your damage increases by " + item.bonusDamage());
             gold.setGoldAmount(gold.getCurrentAmount() - item.getRecipeCost());

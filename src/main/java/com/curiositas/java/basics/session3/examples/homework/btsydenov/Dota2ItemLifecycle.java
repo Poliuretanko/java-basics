@@ -7,15 +7,20 @@ import java.util.Random;
 
 public class Dota2ItemLifecycle {
 
-    public static void main(String[] args) {
-        final int minGoldValue = 500;
+    public static void main(String[] args) throws IllegalGoldAmountException {
+        final int minGoldValue = -5000;
         final int maxGoldValue = 5000;
 
         Random random = new Random();
         final int randomGold = minGoldValue + random.nextInt(maxGoldValue);
 
         Gold currentGold = new Gold();
-        currentGold.setGoldAmount(randomGold);
+        // If the gold amount is less than 0, then it should throw an IllegalGoldAmountException
+        try {
+            currentGold.setGoldAmount(randomGold);
+        } catch (IllegalGoldAmountException e) {
+            e.printStackTrace();
+        }
 
         // Let's try to buy all components and assemble Sange artifact
         OgreAxe ogreAxe = new OgreAxe();
