@@ -1,8 +1,7 @@
-package com.curiositas.java.basics.session2.homework.KosachevAA.secondWar;
+package com.curiositas.java.basics.session3.examples.homework.kosachev;
 
 public class Bullet {
 
-    // private Magazine magazine;
     public String insertBullet() {
         return "insert bullet into magazine";
     }

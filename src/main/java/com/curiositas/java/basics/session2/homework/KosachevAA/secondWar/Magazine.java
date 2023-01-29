@@ -1,48 +1,45 @@
 package com.curiositas.java.basics.session2.homework.KosachevAA.secondWar;
 
-import com.curiositas.java.basics.session2.homework.KosachevAA.rifleMagazine.Bullets;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Magazine {
 
-    private boolean isMagazineCharged = false;
     private boolean isFullCharged = false;
-    private int numberOfBullets = 0;
+    private int magazineCapacity;
 
     private Rifle rifle;
-    public List<Bullet> bullets;
+    // public List<Bullet> bullets;
+    public Set<Bullet> bullets;
 
-    public Magazine(boolean isMagazineCharged, int numberOfBullets) {
-        this.isMagazineCharged = isMagazineCharged;
-        this.numberOfBullets = numberOfBullets;
+    public Magazine(int magazineCapacity) { //Rifle rifle
+        this.magazineCapacity = magazineCapacity;
         //this.rifle = rifle;
-        this.bullets = new ArrayList<>();
-    }
-    public boolean getMagazineCharged(){
-        return isMagazineCharged;
+        //this.bullets = new ArrayList<>();
+        this.bullets = new HashSet<Bullet>();
     }
 
-    public void putBullet(){
-        Bullet bullet = new Bullet();
+    public boolean isMagazineCharged() {
 
-        while (!isFullCharged) {
-            if (bullets.size() == 5) {
-                isFullCharged = true;
-            } else {
-                bullets.add(bullet);
-            }
+        return bullets.size() == magazineCapacity;
+
+    }
+
+    public void putBullet(Bullet bullet) {
+
+        if (!isMagazineCharged()) {
+            bullets.add(bullet);
         }
-        this.numberOfBullets = bullets.size();
+
     }
 
-    public int getNumberOfBullets(){
+    public int getNumberOfBullets() {
         return bullets.size();
     }
 
-    public String getMagazineInfo(){
-        putBullet();
-        return "Current magazine size: " + Integer.toString(numberOfBullets) + "\n";
+
+    public String getMagazineInfo() {
+        // putBullet();
+        return "Current magazine size: " + Integer.toString(getNumberOfBullets()) + "\n";
     }
 }
