@@ -1,5 +1,6 @@
 package com.curiositas.java.basics.session4.examples.homework.kosachev;
 
+import com.curiositas.java.basics.session4.examples.homework.kosachev.ammunition.Gun;
 import com.curiositas.java.basics.session4.examples.homework.kosachev.ammunition.Magazine;
 import com.curiositas.java.basics.session4.examples.homework.kosachev.ammunition.Rifle;
 import com.curiositas.java.basics.session4.examples.homework.kosachev.bullets.ExpansiveBullet;
@@ -9,7 +10,7 @@ public class Shooter {
 
     public static void main(String[] args) {
         Magazine recharge = new Magazine(5);
-        Rifle rifle = new Rifle(recharge);
+        Gun rifle = new Rifle(recharge);
         var retrieveMagazine = rifle.retrieveMagazine();
 
         System.out.println("Is magazine charged: "+retrieveMagazine.isMagazineCharged());

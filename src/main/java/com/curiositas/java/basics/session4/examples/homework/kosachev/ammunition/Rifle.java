@@ -1,19 +1,8 @@
 package com.curiositas.java.basics.session4.examples.homework.kosachev.ammunition;
 
-public class Rifle {
-
-    private boolean isMagazineRetrieved;
-
-    private Magazine magazine;
+public class Rifle extends Gun {
 
     public Rifle(Magazine magazine) {
-        this.magazine = magazine;
+        super(magazine);
     }
-
-    public Magazine retrieveMagazine() {
-        isMagazineRetrieved = true;
-        return magazine;
-    }
-
-
 }
