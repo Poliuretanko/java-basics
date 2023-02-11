@@ -1,18 +1,18 @@
 package com.curiositas.java.basics.session4.examples.homework.almikele;
 
-import com.curiositas.java.basics.session4.examples.homework.almikele.egg.ChickenEgg;
+import com.curiositas.java.basics.session4.examples.homework.almikele.egg.Egg;
 import com.curiositas.java.basics.session4.examples.homework.almikele.spice.BlackPepper;
 import com.curiositas.java.basics.session4.examples.homework.almikele.spice.Salt;
 import com.curiositas.java.basics.session4.examples.homework.almikele.vegetable.SweetPepper;
 import com.curiositas.java.basics.session4.examples.homework.almikele.vegetable.Tomato;
 
-import java.util.List;
+import java.util.Set;
 
 public class Yaishnitsa {
     private Salt salt;
     private BlackPepper pepper;
     private Tomato tomato;
-    private List<ChickenEgg> eggs;
+    private Set<Egg> eggs;
     private SweetPepper sweetPepper;
 
     public Yaishnitsa() {
@@ -42,11 +42,11 @@ public class Yaishnitsa {
         this.tomato = tomato;
     }
 
-    public List<ChickenEgg> getEggs() {
+    public Set<Egg> getEggs() {
         return eggs;
     }
 
-    public void setEggs(List<ChickenEgg> eggs) {
+    public void setEggs(Set<Egg> eggs) {
         this.eggs = eggs;
     }
 

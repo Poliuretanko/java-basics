@@ -1,14 +1,15 @@
 package com.curiositas.java.basics.session4.examples.homework.almikele;
 
 import com.curiositas.java.basics.session4.examples.homework.almikele.egg.ChickenEgg;
+import com.curiositas.java.basics.session4.examples.homework.almikele.egg.Egg;
 import com.curiositas.java.basics.session4.examples.homework.almikele.spice.BlackPepper;
 import com.curiositas.java.basics.session4.examples.homework.almikele.spice.Salt;
 import com.curiositas.java.basics.session4.examples.homework.almikele.vegetable.SweetPepper;
 import com.curiositas.java.basics.session4.examples.homework.almikele.vegetable.Tomato;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Cook {
     public static final int EGGS_QUANTITY = 3;
@@ -41,7 +42,7 @@ public class Cook {
         System.out.println("Let's do some simple yaishnitsa: ");
         Yaishnitsa yaishnitsa = new Yaishnitsa();
 
-        yaishnitsa.setEggs(eggs());
+        yaishnitsa.setEggs(eggs(new ChickenEgg()));
         yaishnitsa.setSalt(salt());
         yaishnitsa.setBlackPepper(blackPepper());
         return yaishnitsa;
@@ -52,16 +53,15 @@ public class Cook {
         yaishnitsa.setSweetPepper(sweetPepper);
     }
 
-    private static List<ChickenEgg> eggs() {
-        List<ChickenEgg> eggs = new ArrayList<>();
+    private static Set<Egg> eggs(Egg egg) {
+        Set<Egg> eggs = new HashSet<>();
         for (int i = 1; i <= EGGS_QUANTITY; i++) {
-            ChickenEgg chickenEgg = new ChickenEgg();
             try {
-                chickenEgg.brake();
+                egg.brake();
             } catch (IllegalStateException e) {
                 System.out.println("Something wrong with egg: " + e.getMessage());
             }
-            eggs.add(chickenEgg);
+            eggs.add(egg);
             System.out.println("add an broken egg");
         }
         return eggs;
