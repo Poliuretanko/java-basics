@@ -10,28 +10,38 @@ public class MailAction {
 
         Postbox mailAction = new Postbox();
 
-        MiddlePackage middlePackage1 = new MiddlePackage();
-        mailAction.setMailPackagesInBox(middlePackage1);
-
-        MiddlePackage middlePackage2 = new MiddlePackage();
-        mailAction.setMailPackagesInBox(middlePackage2);
 
         SmallPackage smallPackage1 = new SmallPackage();
         mailAction.setMailPackagesInBox(smallPackage1);
-
-        SmallPackage smallPackage2 = new SmallPackage();
-        mailAction.setMailPackagesInBox(smallPackage2);
-
+        System.out.println("Add SmallPackage");
         System.out.println(mailAction.getHowMuchFreeSpaceLeft());
+        System.out.println("Current weight PostBox: " + mailAction.getCurrentWeightPackage());
 
-//        BigPackage bigPackage = new BigPackage();
-//        mailAction.setMailPackagesInBox(bigPackage);
-//
-//        System.out.println(mailAction.getHowMuchFreeSpaceLeft());
 
-        mailAction.setPullAllMailPackages();
-
+        BigPackage bigPackage = new BigPackage();
+        mailAction.setMailPackagesInBox(bigPackage);
+        System.out.println("Add BigPackage");
         System.out.println(mailAction.getHowMuchFreeSpaceLeft());
+        System.out.println("Current weight PostBox: " + mailAction.getCurrentWeightPackage());
+
+
+        mailAction.setPullMailPackages(bigPackage);
+        System.out.println("Remove BigPackage");
+        System.out.println(mailAction.getHowMuchFreeSpaceLeft());
+        System.out.println("Current weight PostBox: " + mailAction.getCurrentWeightPackage());
+
+
+        MiddlePackage middlePackage1 = new MiddlePackage();
+        mailAction.setMailPackagesInBox(middlePackage1);
+        System.out.println("Add MiddlePackage");
+        System.out.println(mailAction.getHowMuchFreeSpaceLeft());
+        System.out.println("Current weight PostBox: " + mailAction.getCurrentWeightPackage());
+
+
+        mailAction.setPullMailPackages(middlePackage1);
+        System.out.println("Remove MiddlePackage");
+        System.out.println(mailAction.getHowMuchFreeSpaceLeft());
+        System.out.println("Current weight PostBox: " + mailAction.getCurrentWeightPackage());
 
     }
 

@@ -4,7 +4,8 @@ public class BigPackage extends MailPackage{
 
     private final static int weightPackage = 9;
 
-    public static int getWeightPackage() {
+    @Override
+    public int getWeightPackage() {
         return weightPackage;
     }
 }

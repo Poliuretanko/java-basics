@@ -3,7 +3,8 @@ package com.curiositas.java.basics.session4.examples.homework.kosachev.forPracti
 public class MiddlePackage extends MailPackage{
     private final static int weightPackage = 3;
 
-    public static int getWeightPackage() {
+    @Override
+    public int getWeightPackage() {
         return weightPackage;
     }
 }
