@@ -7,7 +7,6 @@ import com.curiositas.java.basics.session4.examples.homework.kosachev.forPractic
 public class MailAction {
 
     public static void main(String[] args) {
-
         Postbox mailAction = new Postbox();
 
 

@@ -163,5 +163,4 @@ public class PostBoxTest {
         assertEquals(1,PostBoxFreeSpace);
     }
 
-
 }
