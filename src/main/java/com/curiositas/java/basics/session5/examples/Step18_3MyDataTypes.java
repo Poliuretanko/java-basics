@@ -13,7 +13,7 @@ public class Step18_3MyDataTypes {
         System.out.println(mutablePerson.getName());
 
         ImmutablePerson immutablePerson = new ImmutablePerson("John");
-        System.out.println(immutablePerson.getName());
+        System.out.println(immutablePerson.name());
 
     }
 }

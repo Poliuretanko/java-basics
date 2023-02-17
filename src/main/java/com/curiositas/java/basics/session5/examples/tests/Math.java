@@ -5,7 +5,7 @@ public class Math {
         return x + y;
     }
 
-    public int brokenSum(int x, int y) {
+    public long sum(long x, long y) {
         return x - y;
     }
 

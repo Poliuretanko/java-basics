@@ -18,9 +18,9 @@ public class MathTest {
     @Test
     public void testBrokenSum() {
         Math math = new Math();
-        int x = 1;
-        int y = 2;
-        int result = math.brokenSum(x, y);
+        long x = 1;
+        long y = 2;
+        long result = math.sum(x, y);
         assertEquals(3, result);
     }
 

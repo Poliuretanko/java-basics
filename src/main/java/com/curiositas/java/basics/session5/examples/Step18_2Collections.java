@@ -43,7 +43,7 @@ public class Step18_2Collections {
     }
 
     private static void outputHashSet() {
-        var numbers = new HashSet<Integer>();;
+        var numbers = new HashSet<Integer>();
         fillTheCollection(numbers);
         System.out.println("HashSet = " + numbers);
 
@@ -53,7 +53,7 @@ public class Step18_2Collections {
     }
 
     private static void outputTreeSet() {
-        var numbers = new TreeSet<Integer>();;
+        var numbers = new TreeSet<Integer>();
         fillTheCollection(numbers);
         System.out.println("TreeSet = " + numbers);
 
@@ -63,7 +63,7 @@ public class Step18_2Collections {
     }
 
     private static void outputHashMap() {
-        var personInformationMap = new HashMap<String, String>();;
+        var personInformationMap = new HashMap<String, String>();
         personInformationMap.put("name", "John");
         personInformationMap.put("age", "20");
         System.out.println("HashMap = " + personInformationMap);

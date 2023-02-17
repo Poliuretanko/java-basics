@@ -18,7 +18,16 @@ public class Step18_1SimpleDataTypes {
     }
 
     private static void showBooleanOperators() {
-        System.out.println("Logical expression is " + (a() || b() || c()));
+        Boolean booleanTrueVariable = true;
+        Boolean booleanFalseVariable = false;
+        boolean logicalOr = booleanTrueVariable || booleanFalseVariable;
+
+        System.out.println("Logical or is " + logicalOr);
+        boolean logicalAnd = booleanTrueVariable && booleanFalseVariable;
+        System.out.println("Logical and is " + logicalAnd);
+
+        System.out.println("Logical expression is " + (a() & b()));
+        System.out.println("Logical expression is " + (a() && b()));
     }
 
     public static boolean a() {
@@ -28,11 +37,6 @@ public class Step18_1SimpleDataTypes {
 
     public static boolean b() {
         System.out.println("B");
-        return true;
-    }
-
-    public static boolean c() {
-        System.out.println("C");
         return true;
     }
 
