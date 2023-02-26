@@ -14,7 +14,7 @@ public class SynchronizerRequestExecutor extends RequestExecutor {
         while (queue.hasTasks()) {
             Request request = queue.pullTask();
             request.execute();
-            synchronized (this) {
+            synchronized (executedTaskCounter) {
                 executedTaskCounter++;
             }
         }

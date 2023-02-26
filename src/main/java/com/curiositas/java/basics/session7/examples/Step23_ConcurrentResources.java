@@ -19,6 +19,6 @@ public class Step23_ConcurrentResources {
 
         var application = new Application(new SimpleRequestExecutor(queue), queue, threadCount);
 
-        application.run();
+        application.startApplication();
     }
 }
