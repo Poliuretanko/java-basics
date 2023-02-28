@@ -19,7 +19,7 @@ public class CashDesk implements Runnable {
     public void processPurchase(int customerId, int purchaseAmount, Shop shop) throws InterruptedException {
         cashDeskAmount.getAndAdd(purchaseAmount);
         shop.addTotalMoneyCollected(purchaseAmount);
-        System.out.println("Cash desk " + Thread.currentThread().getName() + " served customer " + customerId + " with purchase amount $" + purchaseAmount);
+        System.out.println(Thread.currentThread().getName() + " served customer" + customerId + " with purchase amount $" + purchaseAmount);
         numCustomersServed++;
     }
 

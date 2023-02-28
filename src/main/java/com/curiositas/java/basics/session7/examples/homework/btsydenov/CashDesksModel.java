@@ -40,11 +40,11 @@ public class CashDesksModel {
 
         for (int i = 0; i < NUM_CASHDESKS; i++) {
             threads[i].join();
-            System.out.println(threads[i].getName() + "served " + cashDesks.get(i).getNumCustomersServed() + " and collected $" + cashDesks.get(i).getCashDeskAmount());
+            System.out.println(threads[i].getName() + " served " + cashDesks.get(i).getNumCustomersServed() + " customers and collected $" + cashDesks.get(i).getCashDeskAmount());
         }
 
         System.out.println("Shop collected $" + shop.getTotalMoneyCollected());
-        System.out.println("Just for verification, totalAmountBroughtByCustomers = " + totalAmountBroughtByCustomers);
+        System.out.println("Just for verification, totalAmountBroughtByCustomers = $" + totalAmountBroughtByCustomers);
     }
 }
 
