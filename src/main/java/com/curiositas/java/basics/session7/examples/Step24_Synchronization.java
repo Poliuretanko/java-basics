@@ -19,6 +19,6 @@ public class Step24_Synchronization {
 
         var application = new Application(new SynchronizerRequestExecutor(queue), queue, threadCount);
 
-        application.run();
+        application.startApplication();
     }
 }

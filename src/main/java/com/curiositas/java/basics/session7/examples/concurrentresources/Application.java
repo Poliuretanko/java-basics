@@ -17,14 +17,14 @@ public class Application {
         this.threadCount = threadCount;
     }
 
-    public void run() throws InterruptedException {
+    public void startApplication() throws InterruptedException {
         Collection<Thread> threads = new ArrayList<>();
         for (int i = 0; i < threadCount; i++) {
             threads.add(new Thread(executor));
         }
         threads.parallelStream().forEach(Thread::start);
 
-        while (queue.hasTasks()) {
+        while (queue.hasTasks() || threads.stream().allMatch(Thread::isAlive)) {
             Thread.sleep(100);
         }
         System.out.println(executor.getExecutedTaskCounter() + " tasks executed");

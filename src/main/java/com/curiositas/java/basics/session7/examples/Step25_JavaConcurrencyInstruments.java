@@ -19,6 +19,6 @@ public class Step25_JavaConcurrencyInstruments {
 
         var application = new Application(new AtomicCounterRequestExecutor(queue), queue, threadCount);
 
-        application.run();
+        application.startApplication();
     }
 }
